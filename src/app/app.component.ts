@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, PrimeIcons } from 'primeng/api';
 import { Menu } from 'primeng/menu';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  standalone: true,
+  imports: [Menu]
 })
 export class AppComponent {
   title = 'port';
@@ -16,7 +17,8 @@ export class AppComponent {
     ngOnInit() {
         this.items = [
             { label: 'New', icon: 'pi pi-plus' },
-            { label: 'Search', icon: 'pi pi-search' }
+            { label: 'Search', icon: PrimeIcons.SEARCH },
+            { label: 'Delete', icon: PrimeIcons.TRASH, disabled: true },
         ];
     }
 }
