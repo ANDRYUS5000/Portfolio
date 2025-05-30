@@ -15,9 +15,15 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideAnimations(),
     providePrimeNG({
-        theme: {
-            preset: Aura
-        }
+      ripple: true,
+      theme: {preset: Aura},
+      inputStyle: 'outlined',
+      zIndex: {
+        modal: 1000,
+        overlay: 1000,
+        menu: 1000,
+        tooltip: 1100,
+      }
     })
   ]
 };
