@@ -1,16 +1,16 @@
 <div class="container-fluid">
     <div class="row" >
         <div class="col-2 sidebar">
-            <div class="row" style="width: 80%;">
-                <p-image src="perfil.png" [preview]="true" alt="Image" >
+            <div class="row" style="width: 90%;">
+                <p-image src="perfil.png" [preview]="true" alt="Image">
                     <ng-template #indicator>
                         <i class="pi pi-search"></i>
                     </ng-template>
                     <ng-template #image>
-                        <img src="perfil.png" alt="image" />
+                        <img src="perfil.png" alt="image" class="w-100"/>
                     </ng-template>
                     <ng-template #preview let-style="style" let-previewCallback="previewCallback">
-                        <img src="perfil.png" alt="image" [style]="style" (click)="previewCallback()" />
+                        <img src="perfil.png" alt="image" [style]="style" (click)="previewCallback()" width="555"/>
                     </ng-template>
                 </p-image>
                 <p-menu [model]="items" class="sbmenu"/>
@@ -18,8 +18,9 @@
         </div>
         <div class="col-2"></div>
         <div class="col-10" style="background-color: #d5d5d5;">
-            <section id="section-1" class="section">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod neque laudantium deleniti non asperiores ipsa officiis quia ut voluptate, dolor tempore accusamus quasi magni iusto quas tempora aut, repudiandae fugiat?</h1>
+            <section id="section-1" class="section align-content-center ps-5">
+                <h1 style="font-family: impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">ANDRES MORA</h1>
+                <span>INGENIO DESARROLLO Y EVOLUCION</span>
             </section>
             <section id="section-2" class="section">
                 <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod neque laudantium deleniti non asperiores ipsa officiis quia ut voluptate, dolor tempore accusamus quasi magni iusto quas tempora aut, repudiandae fugiat?</h1>

@@ -16,7 +16,6 @@
 .sidebar p-image img {
     border-radius: 50%;
     object-fit: cover;
-    /* width: 100%; */
 }
 
 .sbmenu {
@@ -29,4 +28,34 @@
 .section {
     height: 100vh;
     width: 100%;
+}
+
+span {
+    font-size: 5rem;
+    color: #fff;
+    font-family: 'Arial';
+    text-transform: uppercase;
+    display: inline-block;
+    transform: rotateY(0deg);
+    transition: 0.5s;
+    animation: bounce 0.6s infinite alternate ease;
+    position: relative;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+        text-shadow: 0 1px 0 #ccc,
+                     0 2px 0 #ccc,
+                     0 3px 0 #ccc,
+                     0 4px 0 #ccc,
+                     0 5px 0 #ccc,
+                     0 6px 0 #ccc,
+                     0 7px 0 #ccc,
+                     0 8px 0 #ccc;
+    }
+    100% {
+        top: -10px;
+        text-shadow: 0 10px 20px #222, 0 1.5px 0 #ccc, 0 2.5px 0 #ccc, 0 3.5px 0 #ccc;
+    }
 }
