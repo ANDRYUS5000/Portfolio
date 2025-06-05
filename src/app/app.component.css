@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=VT323&family=Potta+One&display=swap');
+
 .sidebar{
     /* width: 250px; */
     height: 100vh;
@@ -27,35 +29,67 @@
 
 .section {
     height: 100vh;
-    width: 100%;
 }
 
-span {
-    font-size: 5rem;
-    color: #fff;
-    font-family: 'Arial';
-    text-transform: uppercase;
+.bounce-text {
+    font-family: fantasy, sans-serif;
+    font-size: 3rem;
+    color: #bbff00;
     display: inline-block;
-    transform: rotateY(0deg);
     transition: 0.5s;
-    animation: bounce 0.6s infinite alternate ease;
     position: relative;
+    animation: bounce 0.6s infinite alternate ease;
+}
+
+.type-text {
+    font-family: "VT323";
+    font-size: 4rem;
+    color: #16bf00;
+    display: inline-block;
+    overflow: hidden;
+    width: 0;
+    margin-left: 10px;
+    padding: 0;
+    animation: typing 2.5s steps(15) forwards alternate infinite;
+}
+
+.gradient{
+    font-family: "Alfa Slab One", serif;
+    font-size: 2.7rem;
+    display: inline-block;
+    background: linear-gradient(to right, #fa4343, #d4e02e, #3a3aff, #ff473a, #ff3a3a);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 2.5s linear infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 15ch; }
 }
 
 @keyframes bounce {
     0% {
         top: 0;
         text-shadow: 0 1px 0 #ccc,
-                     0 2px 0 #ccc,
-                     0 3px 0 #ccc,
-                     0 4px 0 #ccc,
-                     0 5px 0 #ccc,
-                     0 6px 0 #ccc,
-                     0 7px 0 #ccc,
-                     0 8px 0 #ccc;
+        0 2px 0 #ccc,
+        0 3px 0 #ccc,
+        0 4px 0 #ccc,
+        0 5px 0 #ccc,
+        0 6px 0 #ccc,
+        0 7px 0 #ccc,
+        0 8px 0 #ccc;
     }
     100% {
         top: -10px;
         text-shadow: 0 10px 20px #222, 0 1.5px 0 #ccc, 0 2.5px 0 #ccc, 0 3.5px 0 #ccc;
+    }
+}
+
+@keyframes gradientAnimation {
+    to {
+        background-position: 200%;
     }
 }
