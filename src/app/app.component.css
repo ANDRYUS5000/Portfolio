@@ -34,7 +34,7 @@
 .bounce-text {
     font-family: fantasy, sans-serif;
     font-size: 3rem;
-    color: #bbff00;
+    color: #57ff24;
     display: inline-block;
     transition: 0.5s;
     position: relative;
@@ -48,16 +48,15 @@
     display: inline-block;
     overflow: hidden;
     width: 0;
-    margin-left: 10px;
-    padding: 0;
-    animation: typing 2.5s steps(15) forwards alternate infinite;
+    height: 4ch;
+    animation: typing 2.5s steps(11) forwards alternate infinite;
 }
 
 .gradient{
     font-family: "Alfa Slab One", serif;
     font-size: 2.7rem;
     display: inline-block;
-    background: linear-gradient(to right, #fa4343, #d4e02e, #3a3aff, #ff473a, #ff3a3a);
+    background: linear-gradient(to right, #56ea17, #16bf00, #91e401, #36b300, #56ea17);
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -67,7 +66,7 @@
 
 @keyframes typing {
     from { width: 0; }
-    to { width: 15ch; }
+    to { width: 11ch; }
 }
 
 @keyframes bounce {
