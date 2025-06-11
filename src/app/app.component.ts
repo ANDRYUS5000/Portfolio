@@ -4,13 +4,14 @@ import { Menu } from 'primeng/menu';
 import { ImageModule } from 'primeng/image';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { DividerModule } from 'primeng/divider';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   standalone: true,
-  imports: [Menu, ImageModule, ButtonModule, CardModule]
+  imports: [Menu, ImageModule, ButtonModule, CardModule, DividerModule]
 })
 export class AppComponent {
   title = 'port';
