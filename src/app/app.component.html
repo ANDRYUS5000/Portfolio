@@ -28,7 +28,9 @@
                         <div class="bounce-text">INGENIO</div>
                     </div>
                     <div class="col d-flex justify-content-center">
-                        <div class="type-text">DESARROLLO</div>
+                        <div class="type-text eleven-steps">
+                            DESARROLLO
+                        </div>
                     </div>
                     <div class="col d-flex justify-content-center">
                         <div class="gradient">Y EVOLUCION</div>
@@ -147,8 +149,8 @@
                         <div class="d-flex justify-content-center align-items-center">
                             <div class="gradient pb-5">MIS PROYECTOS</div>
                         </div>
-                        <div class="row mx-4">
-                            <div class="col d-flex justify-content-center">
+                        <div class="row mx-4 align-items-center">
+                            <div class="col d-flex justify-content-center pt-1">
                                 <p-card [style]="{width: 'fit-content', height:'fit-content', overflow: 'hidden' }">
                                     <ng-template #header>
                                         <img alt="Card" src="hyperledger.webp" [style]="{height:'20vh', width:'100%', objectfit:'cover'}"/>
@@ -356,13 +358,224 @@
             </section>
             <p-divider/>
             <section id="section-4" class="section">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod neque laudantium deleniti non asperiores ipsa officiis quia ut voluptate, dolor tempore accusamus quasi magni iusto quas tempora aut, repudiandae fugiat?</h1>
+                <div class="row h-100">
+                    <div class="col align-self-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="gradient">MIS HABILIDADES</div>
+                        </div>
+                        <div class="row" style="display: grid;">
+                            <div class="row d-flex justify-content-center">
+                                <div class="type-text twsix-steps">Lenguajes de Programacion</div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #fda400;">
+                                        <b>HTML</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="html" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #eaff00;">
+                                        <b>JAVASCRIPT</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="javaScript" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #1c05e6;">
+                                        <b>TYPESCRIPT</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="typeScript" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #7605e6;">
+                                        <b>C#</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="cSharp" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #0588e6;">
+                                        <b>Python</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="python" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col d-flex justify-content-center">
+                                    <div class="type-text fteen-steps">Bases de Datos</div>
+                                </div>
+                                <div class="col d-flex justify-content-center">
+                                    <div class="type-text eleven-steps2">FrameWorks</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col" style="justify-items: center;">
+                                            <h4 style="font-family: Kode Mono, monospace; color: #007efd;">
+                                                <b>MySQL</b>
+                                            </h4>
+                                            <p-knob [(ngModel)]="mySql" valueTemplate="{value}%" [readonly]="true" 
+                                            valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                        </div>
+                                        <div class="col" style="justify-items: center;">
+                                            <h4 style="font-family: Kode Mono, monospace; color: #34b32f;">
+                                                <b>MongoDB</b>
+                                            </h4>
+                                            <p-knob [(ngModel)]="mongoDB" valueTemplate="{value}%" [readonly]="true" 
+                                            valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row">
+                                        <div class="col" style="justify-items: center;">
+                                            <h4 style="font-family: Kode Mono, monospace; color: #fd3b00;">
+                                                <b>ANGULAR</b>
+                                            </h4>
+                                            <p-knob [(ngModel)]="angular" valueTemplate="{value}%" [readonly]="true" 
+                                            valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                        </div>
+                                        <div class="col" style="justify-items: center;">
+                                            <h4 style="font-family: Kode Mono, monospace; color: #22831f;">
+                                                <b>DJANGO</b>
+                                            </h4>
+                                            <p-knob [(ngModel)]="mongoDB" valueTemplate="{value}%" [readonly]="true" 
+                                            valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                        </div>
+                                        <div class="col" style="justify-items: center;">
+                                            <h4 style="font-family: Kode Mono, monospace; color: #07cf00;">
+                                                <b>NODEJS</b>
+                                            </h4>
+                                            <p-knob [(ngModel)]="mongoDB" valueTemplate="{value}%" [readonly]="true" 
+                                            valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="type-text three-steps">IDE's</div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #fd00f9;">
+                                        <b>VISUAL STUDIO</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="VisualStudio" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #0800ff;">
+                                        <b>VISUAL STUDIO CODE</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="VisualStudioCode" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #34b32f;">
+                                        <b>POSTGRESQL</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="PostGreSQL" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #424242;">
+                                        <b>GIT</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="git" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="type-text dis-steps">Misc</div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #2c4cff;">
+                                        <b>PHOTOSHOP</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="adobePhotoshop" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #5d5ab6;">
+                                        <b>VEGAS PRO</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="VegasPro" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                                <div class="col" style="justify-items: center;">
+                                    <h4 style="font-family: Kode Mono, monospace; color: #676767;">
+                                        <b>UNITY</b>
+                                    </h4>
+                                    <p-knob [(ngModel)]="Unity" valueTemplate="{value}%" [readonly]="true" 
+                                    valueColor="#16bf00" rangeColor="#2d4a22" textColor="Black" [size]="95"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
+            <p-divider/>
             <section id="section-5" class="section">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod neque laudantium deleniti non asperiores ipsa officiis quia ut voluptate, dolor tempore accusamus quasi magni iusto quas tempora aut, repudiandae fugiat?</h1>
-            </section>
-            <section id="section-6" class="section">
-                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod neque laudantium deleniti non asperiores ipsa officiis quia ut voluptate, dolor tempore accusamus quasi magni iusto quas tempora aut, repudiandae fugiat?</h1>
+                <div class="row h-100">
+                    <div class="col align-self-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="gradient pb-5">CONTACTAME</div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-12 col-lg-10">
+                                <h4 style="font-family: Kode Mono, monospace; text-align: center;" class="pb-3">
+                                    Si deseas contactarme, puedes hacerlo a traves de mis redes sociales o 
+                                    enviandome un correo electronico.
+                                </h4>
+                                <div class="col text-center justify-content-center pb-2">
+                                    <div class="row">
+                                        <h4 style="font-family: Kode Mono, monospace; color: #36b300;" class="py-4">
+                                            <b>
+                                                Redes Sociales:
+                                            </b>
+                                        </h4>
+                                    </div>
+                                    <div class="row" style="width: 100%; margin: auto;">
+                                        <div class="col py-2">
+                                            <a href="https://www.linkedin.com/in/andres-mauricio-mora-cuasquer-10a686348/" 
+                                            target="_blank" style="text-decoration: none; color: white;">
+                                                <p-button label="LinkedIn" severity="info" icon="pi pi-linkedin" 
+                                                styleClass="w-full"/>
+                                            </a>
+                                        </div>
+                                        <div class="col py-2">
+                                            <a href="https://github.com/ANDRYUS5000" 
+                                            target="_blank" style="text-decoration: none; color: white;">
+                                                <p-button label="GitHub" severity="success" icon="pi pi-github" 
+                                                styleClass="w-full"/>
+                                            </a>
+                                        </div>
+                                        <div class="col py-2">
+                                            <a href="mailto:andresmora555@hotmail.com" target="_blank" 
+                                            style="text-decoration: none; color: white;">
+                                                <p-button label="Correo" severity="warn" icon="pi pi-envelope" 
+                                                styleClass="w-full"/>
+                                            </a>
+                                        </div>
+                                        <div class="col py-2">
+                                            <a href="https://wa.me/+573106165863" target="_blank" 
+                                            style="text-decoration: none; color: white;">
+                                                <p-button label="WhatsApp" severity="danger" icon="pi pi-whatsapp" 
+                                                styleClass="w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

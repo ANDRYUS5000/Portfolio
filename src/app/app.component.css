@@ -41,17 +41,6 @@
     animation: bounce 0.6s infinite alternate ease;
 }
 
-.type-text {
-    font-family: "VT323";
-    font-size: 4rem;
-    color: #16bf00;
-    display: inline-block;
-    overflow: hidden;
-    width: 0;
-    height: 4ch;
-    animation: typing 2.5s steps(11) forwards alternate infinite;
-}
-
 .gradient{
     font-family: "Alfa Slab One", serif;
     font-size: 2.7rem;
@@ -64,11 +53,75 @@
     animation: gradientAnimation 2.5s linear infinite;
 }
 
+.type-text {
+    font-family: "VT323";
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    height: 4ch;
+    padding: 0;
+}
+
+.three-steps{
+    font-size: 3rem;
+    color: #f8f000;
+    animation: typingIDE .5s steps(5,end) forwards;
+}
+.dis-steps{
+    font-size: 3rem;
+    color: #e5532b;
+    animation: typingDis 1s steps(4,end) forwards;
+}
+
+.eleven-steps{
+    font-size: 4rem;
+    color: #16bf00;
+    animation: typing 2.5s steps(11,end) forwards alternate infinite;
+}
+
+.eleven-steps2{
+    font-size: 3rem;
+    color: #f89d00;
+    animation: typing 1s steps(11,end) forwards ;
+}
+
+.fteen-steps{
+    font-size: 3rem;
+    color: #0008ff;
+    animation: typingDB 1.5s steps(15,end) forwards;
+}
+
+.twsix-steps{
+    font-size: 3rem;
+    color: #16bf00;
+    animation: typinglng 1.8s steps(26,end) forwards;
+}
+
+@keyframes typingDis {
+    from { width: 0; }
+    to { width: 4ch; }
+}
+
+@keyframes typingIDE {
+    from { width: 0; }
+    to { width: 5ch; }
+}
+
+@keyframes typingDB {
+    from { width: 0; }
+    to { width: 15ch; }
+}
+
+@keyframes typinglng {
+    from { width: 0; }
+    to { width: 26ch; }
+}
+
 @keyframes typing {
     from { width: 0; }
     to { width: 11ch; }
 }
-
 
 @keyframes bounce {
     0% {
