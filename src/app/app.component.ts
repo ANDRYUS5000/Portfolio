@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MenuItem, PrimeIcons } from 'primeng/api';
 import { Menu } from 'primeng/menu';
 import { ImageModule } from 'primeng/image';
@@ -44,6 +44,17 @@ export class AppComponent {
   VegasPro: number = 85;
   Unity: number = 90;
 
+  sectionIds = [
+    'section-1',
+    'section-2',
+    'section-3',
+    'section-4',
+    'section-5',
+    'section-6'
+  ];
+  currentSectionIndex = 0;
+  isScrolling = false;
+
   ngOnInit() {
     this.items = [
       { label: 'Inicio', icon: PrimeIcons.HOME, command: () => this.scrollToSection('section-1')},
@@ -62,10 +73,43 @@ export class AppComponent {
     link.remove();
   }
 
+  @HostListener('window:wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    if (this.isScrolling) return;
+    const direction = event.deltaY > 0 ? 1 : -1;
+    let newIndex = this.currentSectionIndex + direction;
+    newIndex = Math.max(0, Math.min(this.sectionIds.length - 1, newIndex));
+    if (newIndex !== this.currentSectionIndex) {
+      this.currentSectionIndex = newIndex;
+      this.scrollToSection(this.sectionIds[this.currentSectionIndex]);
+    }
+  }
+
   scrollToSection(sectionId: string) {
     const el = document.getElementById(sectionId);
     if (el) {
+      this.isScrolling = true;
       el.scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => { this.isScrolling = false; }, 800);
+    }
+  }
+
+  ngAfterViewInit() {
+    // Detect current section on load
+    this.updateCurrentSectionIndex();
+    window.addEventListener('scroll', this.updateCurrentSectionIndex.bind(this));
+  }
+
+  updateCurrentSectionIndex() {
+    for (let i = 0; i < this.sectionIds.length; i++) {
+      const el = document.getElementById(this.sectionIds[i]);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          this.currentSectionIndex = i;
+          break;
+        }
+      }
     }
   }
 }
