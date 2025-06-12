@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bokor&family=Caesar+Dressing&family=Kode+Mono:wght@400..700&family=New+Rocker&family=Potta+One&family=VT323&display=swap');
 
+html{
+    scroll-behavior: smooth;
+}
+
 .sidebar{
     /* width: 250px; */
     height: 100vh;

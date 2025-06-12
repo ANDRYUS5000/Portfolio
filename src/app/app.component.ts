@@ -46,11 +46,11 @@ export class AppComponent {
 
   ngOnInit() {
     this.items = [
-      { label: 'Inicio', icon: PrimeIcons.HOME, href: '#section-1' },
-      { label: 'Perfil', icon: PrimeIcons.USER, href: '#section-2' },
-      { label: 'Portafolio', icon: PrimeIcons.BRIEFCASE, href: '#section-3' },
-      { label: 'Habilidades', icon: PrimeIcons.STAR_FILL, href: '#section-4' },
-      { label: 'Contacto', icon: PrimeIcons.PHONE, href: '#section-5' },
+      { label: 'Inicio', icon: PrimeIcons.HOME, command: () => this.scrollToSection('section-1')},
+      { label: 'Perfil', icon: PrimeIcons.USER, command: () => this.scrollToSection('section-2')},
+      { label: 'Portafolio', icon: PrimeIcons.BRIEFCASE, command: () => this.scrollToSection('section-3')},
+      { label: 'Habilidades', icon: PrimeIcons.STAR_FILL, command: () => this.scrollToSection('section-4')},
+      { label: 'Contacto', icon: PrimeIcons.PHONE, command: () => this.scrollToSection('section-5')}
     ];
   }
 
@@ -60,5 +60,12 @@ export class AppComponent {
     link.download = 'CV Andres Mora.pdf'; // Nombre del archivo al descargar
     link.click();
     link.remove();
+  }
+
+  scrollToSection(sectionId: string) {
+    const el = document.getElementById(sectionId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }
