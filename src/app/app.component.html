@@ -1,6 +1,30 @@
 <div class="container-fluid">
-    <div class="row" >
-        <div class="col-2 sidebar">
+    <button
+        class="btn btn-secondary d-block d-xl-none my-2 position-fixed"
+        style="background-color: #c5c5c5; border-color: #c5c5c5;"
+        (click)="pdvisible = true">
+        <i class="pi pi-bars"></i>
+    </button>
+    <p-drawer [(visible)]="pdvisible" position="full" class="d-none d-xl-block">
+        <ng-template #headless>
+            <div class="row h-100 m-0">
+                <p-image src="perfil.png" [preview]="true" alt="Image">
+                    <ng-template #indicator>
+                        <i class="pi pi-search"></i>
+                    </ng-template>
+                    <ng-template #image>
+                        <img src="perfil.png" alt="image" class="w-100"/>
+                    </ng-template>
+                    <ng-template #preview let-style="style" let-previewCallback="previewCallback">
+                        <img src="perfil.png" alt="image" [style]="style" (click)="previewCallback()" width="250"/>
+                    </ng-template>
+                </p-image>
+                <p-menu [model]="items" class="sbmenu d-grid"/>
+            </div>
+        </ng-template>
+    </p-drawer>
+    <div class="row">
+        <div class="col-2 sidebar d-none d-xl-flex">
             <div class="row" style="width: 90%;">
                 <p-image src="perfil.png" [preview]="true" alt="Image">
                     <ng-template #indicator>
@@ -17,7 +41,7 @@
             </div>
         </div>
         <div class="col-2"></div>
-        <div class="col-10" style="background-color: #d5d5d5;">
+        <div class="col-12 col-xl-10" style="background-color: #d5d5d5;">
             <section id="section-1" class="section">
                 <div style="font-family: impact; font-size: 5rem; color: rgb(35, 56, 36); height: 15%;"
                      class="d-flex justify-content-center align-items-center">
@@ -100,7 +124,7 @@
                     </div>
                 </div>
             </section>
-            <p-divider/>
+            <!-- <p-divider/> eliminado -->
             <section id="section-2" class="section">
                 <div class="row d-flex justify-content-center h-100">
                     <div class="col align-self-center">
@@ -142,7 +166,7 @@
                     </div>  
                 </div>
             </section>
-            <p-divider/>
+            <!-- <p-divider/> eliminado -->
             <section id="section-3" class="section">
                 <div class="row h-100">
                     <div class="col align-self-center">
@@ -288,7 +312,7 @@
                                         </div>
                                     </div>
                                     <ng-template #footer>
-                                        <a href="https://github.com/OmarTimana/ConceptosMaterial" target="_blank"
+                                        <a href="https://github.com/ANDRYUS5000/ConceptosMaterial" target="_blank"
                                         style="text-decoration: none;">
                                             <p-button label="Ir a Repositorio" class="w-full d-grid" styleClass="w-full" />
                                         </a>
@@ -356,7 +380,7 @@
                     </div>
                 </div>
             </section>
-            <p-divider/>
+            <!-- <p-divider/> -->
             <section id="section-4" class="section">
                 <div class="row h-100">
                     <div class="col align-self-center">
@@ -520,7 +544,7 @@
                     </div>
                 </div>
             </section>
-            <p-divider/>
+            <!-- <p-divider/> -->
             <section id="section-5" class="section">
                 <div class="row h-100">
                     <div class="col align-self-center">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bokor&family=Caesar+Dressing&family=Kode+Mono:wght@400..700&family=New+Rocker&family=Potta+One&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Kode+Mono:wght@400..700&family=VT323&display=swap');
 
 html{
     scroll-behavior: smooth;
@@ -29,6 +29,11 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+:host ::ng-deep .p-menu{
+    min-width: 7rem !important;
+    width: 12rem !important;
 }
 
 .section {

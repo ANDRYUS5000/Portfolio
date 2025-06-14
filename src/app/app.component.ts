@@ -6,21 +6,24 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { Knob } from 'primeng/knob';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { DrawerModule } from 'primeng/drawer';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   standalone: true,
+  // encapsulation: ViewEncapsulation.None,
   imports: [Menu, ImageModule, ButtonModule, CardModule, DividerModule, 
-    Knob, FormsModule]
+    Knob, FormsModule, DrawerModule]
 })
 export class AppComponent {
   title = 'port';
 
   items: MenuItem[] | undefined;
+  pdvisible: boolean = false;
 
   html: number = 80;
   javaScript: number = 95;
@@ -52,6 +55,7 @@ export class AppComponent {
     'section-5',
     'section-6'
   ];
+
   currentSectionIndex = 0;
   isScrolling = false;
 
@@ -86,28 +90,33 @@ export class AppComponent {
   }
 
   scrollToSection(sectionId: string) {
-    const el = document.getElementById(sectionId);
-    if (el) {
-      this.isScrolling = true;
-      el.scrollIntoView({ behavior: 'smooth' });
-      setTimeout(() => { this.isScrolling = false; }, 800);
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      const el = document.getElementById(sectionId);
+      if (el instanceof HTMLElement) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.warn(`No se encontró el elemento con id: ${sectionId}`);
+      }
     }
   }
 
   ngAfterViewInit() {
-    // Detect current section on load
     this.updateCurrentSectionIndex();
-    window.addEventListener('scroll', this.updateCurrentSectionIndex.bind(this));
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', this.updateCurrentSectionIndex.bind(this));
+    }
   }
 
   updateCurrentSectionIndex() {
     for (let i = 0; i < this.sectionIds.length; i++) {
-      const el = document.getElementById(this.sectionIds[i]);
-      if (el) {
-        const rect = el.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-          this.currentSectionIndex = i;
-          break;
+      if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+        const el = document.getElementById(this.sectionIds[i]);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+            this.currentSectionIndex = i;
+            break;
+          }
         }
       }
     }
