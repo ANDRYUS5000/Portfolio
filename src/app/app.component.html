@@ -5,36 +5,32 @@
         (click)="pdvisible = true">
         <i class="pi pi-bars"></i>
     </button>
-    <p-drawer [(visible)]="pdvisible" position="full" class="d-none d-xl-block">
-        <ng-template #headless>
-            <div class="row h-100 m-0">
-                <p-image src="perfil.png" [preview]="true" alt="Image">
-                    <ng-template #indicator>
-                        <i class="pi pi-search"></i>
-                    </ng-template>
-                    <ng-template #image>
-                        <img src="perfil.png" alt="image" class="w-100"/>
-                    </ng-template>
-                    <ng-template #preview let-style="style" let-previewCallback="previewCallback">
-                        <img src="perfil.png" alt="image" [style]="style" (click)="previewCallback()" width="250"/>
-                    </ng-template>
-                </p-image>
-                <p-menu [model]="items" class="sbmenu d-grid"/>
-            </div>
-        </ng-template>
-    </p-drawer>
+    @if (displaypd) {
+        <p-drawer [(visible)]="pdvisible" class="d-block d-xl-none">
+            <ng-template #headless>
+                <div class="row h-100 mx-0" style="flex-direction: column;
+                                                    justify-content: space-evenly;
+                                                    align-self: center;">
+                    <p-image src="perfil.png" alt="Image" class="p-0">
+                        <ng-template #image>
+                            <img src="perfil.png" alt="image" style="height: 15rem; border-radius: 50%;"/>
+                        </ng-template>
+                    </p-image>
+                    <p-menu [model]="items" class="sbmenu d-grid"/>
+                </div>
+            </ng-template>
+        </p-drawer>
+    }
     <div class="row">
-        <div class="col-2 sidebar d-none d-xl-flex">
-            <div class="row" style="width: 90%;">
-                <p-image src="perfil.png" [preview]="true" alt="Image">
-                    <ng-template #indicator>
-                        <i class="pi pi-search"></i>
-                    </ng-template>
+        <div class="col-2 p-0 sidebar d-none d-xl-flex" >
+            <div class="row" style="flex-direction: column;
+                                    justify-content: space-evenly;
+                                    max-width: 16.7rem;
+                                    text-align: center;
+                                    width: 100%;">
+                <p-image src="perfil.png" alt="Image">
                     <ng-template #image>
-                        <img src="perfil.png" alt="image" class="w-100"/>
-                    </ng-template>
-                    <ng-template #preview let-style="style" let-previewCallback="previewCallback">
-                        <img src="perfil.png" alt="image" [style]="style" (click)="previewCallback()" width="555"/>
+                        <img src="perfil.png" alt="image" width="100"/>
                     </ng-template>
                 </p-image>
                 <p-menu [model]="items" class="sbmenu"/>

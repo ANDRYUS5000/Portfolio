@@ -52,12 +52,12 @@ export class AppComponent {
     'section-2',
     'section-3',
     'section-4',
-    'section-5',
-    'section-6'
+    'section-5'
   ];
 
   currentSectionIndex = 0;
   isScrolling = false;
+  displaypd: boolean = true
 
   ngOnInit() {
     this.items = [
@@ -67,6 +67,18 @@ export class AppComponent {
       { label: 'Habilidades', icon: PrimeIcons.STAR_FILL, command: () => this.scrollToSection('section-4')},
       { label: 'Contacto', icon: PrimeIcons.PHONE, command: () => this.scrollToSection('section-5')}
     ];
+
+    if (typeof window !== 'undefined') {
+      this.displaypd != window.innerWidth >= 1200; // Mostrar el panel de habilidades en pantallas pequeñas
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1200) {
+          this.displaypd = false; // Ocultar el panel de habilidades en pantallas pequeñas
+        }
+        else {
+          this.displaypd = true; // Mostrar el panel de habilidades en pantallas pequeñas
+        }
+      });
+    }
   }
 
   downloadCV() {
